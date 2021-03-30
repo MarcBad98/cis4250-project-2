@@ -52,6 +52,11 @@ export default {
           title: "Template",
           icon: "fas fa-file-pdf",
         },
+        {
+          href: { name: "CompanyView" },
+          title: "Company View",
+          icon: "fas fa-building",
+        },
       ],
     };
   },

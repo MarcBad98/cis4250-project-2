@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Form from '../views/Form.vue'
 import Template from '../views/Template.vue'
+import CompanyView from '../views/CompanyView.vue'
 
 Vue.use(VueRouter)
 
@@ -15,6 +16,11 @@ const routes = [
     path: '/template',
     name: 'Template',
     component: Template
+  },
+  {
+    path: '/company-view',
+    name: 'CompanyView',
+    component: CompanyView
   },
 ]
 

@@ -16,7 +16,7 @@ export default new Vuex.Store({
       fullName: '',
       address: '',
       telephone: '',
-      email: ''      
+      email: ''
     },
     reasons: [],
     erasure: '',
