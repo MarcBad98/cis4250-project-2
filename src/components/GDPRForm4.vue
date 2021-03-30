@@ -12,7 +12,11 @@
       is about you or the person you are representing on this form.
     </p>
     <b-field>
-      <b-input v-model="$store.state.erasure" type="textarea"></b-input>
+      <b-input
+        v-model="$store.state.erasure"
+        type="textarea"
+        :disabled="hasSigned"
+      ></b-input>
     </b-field>
     <b-notification
       type="is-info"
@@ -52,5 +56,10 @@
 <script>
 export default {
   name: "GPDRForm4",
+  computed: {
+    hasSigned() {
+      return this.$store.state.hasSigned;
+    },
+  },
 };
 </script>

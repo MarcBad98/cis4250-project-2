@@ -8,7 +8,11 @@
       Please tick the appropriate box:
     </p>
     <b-field v-for="option in options" v-bind:key="option">
-      <b-checkbox v-model="$store.state.reasons" :native-value="option">
+      <b-checkbox
+        v-model="$store.state.reasons"
+        :native-value="option"
+        :disabled="hasSigned"
+      >
         {{ option }}
       </b-checkbox>
     </b-field>
@@ -17,7 +21,7 @@
       please attach any justifying documents to this one.
     </p>
     <b-field class="file is-primary">
-      <b-upload class="file-label">
+      <b-upload class="file-label" :disabled="hasSigned">
         <span class="file-cta">
           <b-icon class="file-icon" icon="upload"></b-icon>
           <span class="file-label">Click to upload</span>
@@ -41,6 +45,11 @@ export default {
         "You are a child, you represent a child, or you were a child at the time of the data processing and you feel your personal data was used to offer you information society services.",
       ],
     };
+  },
+  computed: {
+    hasSigned() {
+      return this.$store.state.hasSigned;
+    },
   },
 };
 </script>

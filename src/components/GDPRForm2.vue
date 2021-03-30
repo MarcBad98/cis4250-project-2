@@ -6,13 +6,21 @@
       Please tick the appropriate box and read the instructions which follow it.
     </p>
     <b-field>
-      <b-radio v-model="$store.state.dataSubject.isUser" :native-value="true">
+      <b-radio
+        v-model="$store.state.dataSubject.isUser"
+        :native-value="true"
+        :disabled="hasSigned"
+      >
         <strong>YES</strong>: I am the data subject. I enclose proof of my
         identity (see below).
       </b-radio>
     </b-field>
     <b-field>
-      <b-radio v-model="$store.state.dataSubject.isUser" :native-value="false">
+      <b-radio
+        v-model="$store.state.dataSubject.isUser"
+        :native-value="false"
+        :disabled="hasSigned"
+      >
         <strong>NO</strong>: I am acting on behalf of the data subject. I have
         enclosed the data subject’s written authority and proof of the data
         subject’s identity and my own identity (see below).
@@ -22,16 +30,28 @@
       <div class="box has-background-light">
         <p>Please enter the data subject's information below.</p>
         <b-field label="Full Name">
-          <b-input v-model="$store.state.dataSubject.fullName"></b-input>
+          <b-input
+            v-model="$store.state.dataSubject.fullName"
+            :disabled="hasSigned"
+          ></b-input>
         </b-field>
         <b-field label="Address">
-          <b-input v-model="$store.state.dataSubject.address"></b-input>
+          <b-input
+            v-model="$store.state.dataSubject.address"
+            :disabled="hasSigned"
+          ></b-input>
         </b-field>
         <b-field label="Contact Telephone Number">
-          <b-input v-model="$store.state.dataSubject.telephone"></b-input>
+          <b-input
+            v-model="$store.state.dataSubject.telephone"
+            :disabled="hasSigned"
+          ></b-input>
         </b-field>
         <b-field label="Email Address">
-          <b-input v-model="$store.state.dataSubject.email"></b-input>
+          <b-input
+            v-model="$store.state.dataSubject.email"
+            :disabled="hasSigned"
+          ></b-input>
         </b-field>
       </div>
       <br />
@@ -57,7 +77,7 @@
       </li>
     </ol>
     <b-field class="file is-primary">
-      <b-upload class="file-label">
+      <b-upload class="file-label" :disabled="hasSigned">
         <span class="file-cta">
           <b-icon class="file-icon" icon="upload"></b-icon>
           <span class="file-label">Click to upload</span>
@@ -81,5 +101,10 @@
 <script>
 export default {
   name: "GPDRForm2",
+  computed: {
+    hasSigned() {
+      return this.$store.state.hasSigned;
+    },
+  },
 };
 </script>

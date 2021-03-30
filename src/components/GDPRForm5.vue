@@ -26,6 +26,7 @@
         <b-button
           label="Sign (Digital Signature)"
           type="is-info"
+          :disabled="hasSigned"
           @click="sign()"
         ></b-button>
       </div>
@@ -39,6 +40,9 @@ export default {
   computed: {
     currentDate() {
       return new Date().toLocaleDateString();
+    },
+    hasSigned() {
+      return this.$store.state.hasSigned;
     },
   },
   methods: {

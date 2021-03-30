@@ -13,7 +13,7 @@
         v-slot="props"
       >
         <b-tag type="is-success" v-if="props.row.isDataSubject">
-          <strong>Yes</strong>
+          <strong class="has-text-white">Yes</strong>
         </b-tag>
         <b-tag type="is-warning" v-else>
           <strong>No</strong>
@@ -75,7 +75,7 @@ export default {
       return {
         fullName: this.$store.state.user.fullName,
         email: this.$store.state.user.email,
-        isDataSubject: this.$store.state.dataSubject.isDataSubject,
+        isDataSubject: this.$store.state.dataSubject.isUser,
         dataSubject: this.$store.state.dataSubject.fullName,
       };
     },
