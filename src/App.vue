@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div id="view" class="section content" :class="{ collapsed: isCollapsed }">
+    <div id="view" class="section" :class="{ collapsed: isCollapsed }">
       <demo-warning></demo-warning>
       <router-view></router-view>
     </div>

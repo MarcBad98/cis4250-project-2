@@ -1,6 +1,6 @@
 <template>
   <div id="view-template">
-    <h1>Template</h1>
+    <h1 class="title">Template</h1>
     <small>
       Source:
       <a href="https://gdpr.eu/right-to-erasure-request-form/" target="_blank">
