@@ -10,7 +10,10 @@
     <hr />
     <div class="columns is-multiline has-background-light">
       <div v-for="page in 3" v-bind:key="page" class="column is-half">
-        <pdf src="/static/right-to-erasure-request-form.pdf" :page="page"></pdf>
+        <pdf
+          src="/cis4250-project-2/static/right-to-erasure-request-form.pdf"
+          :page="page"
+        ></pdf>
       </div>
     </div>
   </div>
