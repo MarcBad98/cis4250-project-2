@@ -1,5 +1,3 @@
 module.exports = {
-    publicPath: process.env.NODE_ENV === 'production'
-        ? '/cis4250-project-2/'
-        : '/'
+    publicPath: '/cis4250-project-2/'
 }
